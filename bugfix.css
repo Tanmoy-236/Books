@@ -1,0 +1,68 @@
+/* Interaction bug fixes */
+@media (hover: hover) and (pointer: fine) {
+  .products:hover .product {
+    transform: none;
+    box-shadow: none;
+    border-color: #e0e4e3;
+  }
+
+  .products:hover .product:hover {
+    z-index: 2;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(18, 46, 49, 0.09);
+    border-color: #cbd9d8;
+  }
+
+  .categories:hover .category {
+    transform: none;
+    box-shadow: none;
+    border-color: #e2e4e2;
+  }
+
+  .categories:hover .category:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(18, 46, 49, 0.07);
+    border-color: #cbd9d8;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .product,
+  .category,
+  .icon-btn svg,
+  .primary-btn,
+  .round,
+  .add {
+    transform: none !important;
+  }
+}
+
+.product .add {
+  position: relative;
+  z-index: 3;
+}
+
+.product .add:hover,
+.product .add:focus-visible {
+  background: #dbe8e6;
+  color: var(--teal-dark);
+}
+
+#guides,
+#nonfiction,
+#bestsellers {
+  scroll-margin-top: 85px;
+}
+
+.hero::before,
+.hero::after,
+.hero-book::before,
+.cover-art::after {
+  pointer-events: none;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
