@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bugfix.css">
 </head>
 <body>
   <header class="header">
@@ -16,26 +17,22 @@
       <div class="brand-mark" aria-hidden="true"><div class="book-page"></div><div class="book-page right"></div></div>
       <div class="brand-text"><strong>WanderReads</strong><span>Books for a Bigger World</span></div>
     </a>
-
     <label class="search" aria-label="Search books">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
       <input type="search" placeholder="Search for books, authors, topics...">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 4.2 4.2"></path></svg>
     </label>
-
     <nav class="nav">
       <a href="#guides">Travel Guides <span class="arrow">⌄</span></a>
       <a href="#nonfiction">Non-Fiction <span class="arrow">⌄</span></a>
       <a href="#bestsellers">Best Sellers</a>
     </nav>
-
     <div class="actions">
       <button class="icon-btn" aria-label="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.7"></circle><path d="M4.8 20c.8-4 3.2-6 7.2-6s6.4 2 7.2 6"></path></svg></button>
       <button class="icon-btn" aria-label="Wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.5 8.5c0 5-8.5 10-8.5 10s-8.5-5-8.5-10A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8.5 2.5Z"></path></svg></button>
       <button class="icon-btn" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6"></path><circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg><span class="cart-count">0</span></button>
     </div>
   </header>
-
   <main id="top">
     <section class="hero">
       <div class="hero-content">
@@ -52,14 +49,12 @@
       </div>
       <div class="hero-dots"><button class="round" aria-label="Previous slide">‹</button><button class="round" aria-label="Next slide">›</button></div>
     </section>
-
     <section class="benefits" aria-label="Store benefits">
       <div class="benefit"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h18v15H3zM21 13h5l3 4v6h-8z"></path><circle cx="9" cy="25" r="2.8"></circle><circle cx="25" cy="25" r="2.8"></circle></svg><div><strong>Free Shipping</strong><span>On orders over ₹999</span></div></div>
       <div class="benefit"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m16 3 11 4v7c0 7.2-4.5 11.9-11 15-6.5-3.1-11-7.8-11-15V7l11-4Z"></path><path d="m11 15 3.2 3.2L21 11"></path></svg><div><strong>Secure Payments</strong><span>100% safe &amp; encrypted</span></div></div>
       <div class="benefit"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h10c4 0 6 2 6 6v14c0-3-2-5-6-5H4V6Zm24 0H18c-4 0-6 2-6 6v14c0-3 2-5 6-5h10V6Z"></path></svg><div><strong>Curated Selection</strong><span>Top travel &amp; educational books</span></div></div>
       <div class="benefit"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M25 5C15 6 8 11 8 19c0 4 3 6 6 6 7 0 10-9 11-20Z"></path><path d="M4 28C8 20 13 15 21 11"></path></svg><div><strong>Eco-Friendly</strong><span>Sustainable packaging</span></div></div>
     </section>
-
     <section class="section" id="guides">
       <div class="section-head"><h2 class="section-title">Featured Travel Guides</h2><a class="view-all" href="#guides">View All</a></div>
       <div class="products">
@@ -71,7 +66,6 @@
         <article class="product"><div class="cover"><div class="cover-art iceland"><span class="lp">lonely planet</span><h4>Iceland</h4><small>TRAVEL GUIDE</small></div></div><h3>Iceland Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span class="stars">★★★★★</span> 4.6 (421)</div><div class="price">₹749</div><button class="add" onclick="addToCart(this)">Add to Cart</button></article>
       </div>
     </section>
-
     <section class="category-section" id="nonfiction">
       <div class="section-head"><h2 class="section-title">Popular Categories</h2><a class="view-all" href="#nonfiction">View All</a></div>
       <div class="categories">
@@ -80,8 +74,8 @@
         <a class="category" href="#bestsellers"><div class="category-image cat-three"></div><div class="category-content"><strong>Best Sellers</strong><span>Loved by readers</span></div><div class="cat-arrow">→</div></a>
       </div>
     </section>
+    <section id="bestsellers" hidden aria-hidden="true"></section>
   </main>
-
   <script>
     let cartCount = 0;
     function addToCart(button) {
