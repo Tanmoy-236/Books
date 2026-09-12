@@ -5,266 +5,184 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="WanderReads — books for a bigger world.">
   <title>WanderReads — Books for a Bigger World</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <header class="header">
     <a class="brand" href="#top" aria-label="WanderReads home">
-      <div class="brand-mark" aria-hidden="true">
-        <div class="book-page"></div>
-        <div class="book-page right"></div>
-      </div>
-      <div class="brand-text">
-        <strong>WanderReads</strong>
-        <span>Books for a Bigger World</span>
-      </div>
+      <div class="brand-mark" aria-hidden="true"><div class="book-page"></div><div class="book-page right"></div></div>
+      <div class="brand-text"><strong>WanderReads</strong><span>Books for a Bigger World</span></div>
     </a>
 
     <label class="search" aria-label="Search books">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-        <circle cx="11" cy="11" r="6.8"></circle>
-        <path d="m16 16 5 5"></path>
-      </svg>
-      <input type="search" placeholder="Search for books, authors, topics...">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-        <circle cx="10.8" cy="10.8" r="6.5"></circle>
-        <path d="m16 16 4.2 4.2"></path>
-      </svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+      <input id="searchInput" type="search" placeholder="Search for books, authors, topics...">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 4.2 4.2"></path></svg>
     </label>
 
     <nav class="nav" aria-label="Main navigation">
-      <a href="#guides">Travel Guides <span class="arrow">⌄</span></a>
-      <a href="#nonfiction">Non-Fiction <span class="arrow">⌄</span></a>
+      <a href="#guides">Travel Guides <span>⌄</span></a>
+      <a href="#bestsellers">Non-Fiction <span>⌄</span></a>
       <a href="#bestsellers">Best Sellers</a>
+      <a href="#new-arrivals">New Arrivals</a>
     </nav>
 
     <div class="actions">
-      <button class="icon-btn" aria-label="Account">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <circle cx="12" cy="8" r="3.7"></circle>
-          <path d="M4.8 20c.8-4 3.2-6 7.2-6s6.4 2 7.2 6"></path>
-        </svg>
-      </button>
-      <button class="icon-btn" aria-label="Wishlist">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M20.5 8.5c0 5-8.5 10-8.5 10s-8.5-5-8.5-10A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8.5 2.5Z"></path>
-        </svg>
-      </button>
-      <button class="icon-btn" aria-label="Cart">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6"></path>
-          <circle cx="9" cy="20" r="1"></circle>
-          <circle cx="18" cy="20" r="1"></circle>
-        </svg>
-        <span class="cart-count">0</span>
-      </button>
+      <button class="icon-btn" type="button" aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.7"></circle><path d="M4.8 20c.8-4 3.2-6 7.2-6s6.4 2 7.2 6"></path></svg></button>
+      <button class="icon-btn" type="button" aria-label="Wishlist"><svg viewBox="0 0 24 24"><path d="M20.5 8.5c0 5-8.5 10-8.5 10s-8.5-5-8.5-10A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8.5 2.5Z"></path></svg></button>
+      <button class="icon-btn cart-btn" type="button" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6"></path><circle cx="9" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg><span class="cart-count">0</span></button>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
+      <button class="hero-arrow hero-prev" type="button" aria-label="Previous slide">‹</button>
       <div class="hero-content">
         <div class="eyebrow">EXPLORE <span>•</span> LEARN <span>•</span> GROW</div>
         <h1>Your Next Adventure<br>Starts with a Book</h1>
         <p class="hero-copy">
           Discover the world's most beautiful places and gain new perspectives with our travel guides and educational books.
         </p>
-        <button class="primary-btn" type="button">
+        <button class="primary-btn" type="button" onclick="document.getElementById('guides').scrollIntoView({ behavior: 'smooth' })">
           Shop Travel Guides <span>→</span>
         </button>
       </div>
-
       <div class="hero-note">More<br>Than Just<br>A Destination</div>
-
       <div class="hero-books" aria-hidden="true">
-        <div class="hero-book">
-          <span class="publisher">lonely planet</span>
-          <h3>Italy</h3>
-          <small>Expert tips<br>Local secrets<br>Best routes</small>
-        </div>
-        <div class="hero-book">
-          <span class="publisher">lonely planet</span>
-          <h3>Japan</h3>
-          <small>Explore<br>Experience<br>Discover</small>
-        </div>
-        <div class="hero-book">
-          <span class="publisher">lonely planet</span>
-          <h3>New Zealand</h3>
-          <small>Nature<br>Adventure<br>Culture</small>
-        </div>
+        <div class="hero-book"><span>lonely planet</span><strong>Italy</strong><small>Expert tips<br>Local secrets<br>Best routes</small></div>
+        <div class="hero-book"><span>lonely planet</span><strong>Japan</strong><small>Explore<br>Experience<br>Discover</small></div>
+        <div class="hero-book"><span>lonely planet</span><strong>New Zealand</strong><small>Nature<br>Adventure<br>Culture</small></div>
       </div>
-
-      <div class="hero-dots">
-        <button class="round" type="button" aria-label="Previous slide">‹</button>
-        <button class="round" type="button" aria-label="Next slide">›</button>
-      </div>
+      <button class="hero-arrow hero-next" type="button" aria-label="Next slide">›</button>
     </section>
 
     <section class="benefits" aria-label="Store benefits">
-      <div class="benefit">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M3 8h18v15H3zM21 13h5l3 4v6h-8z"></path>
-          <circle cx="9" cy="25" r="2.8"></circle>
-          <circle cx="25" cy="25" r="2.8"></circle>
-        </svg>
-        <div><strong>Free Shipping</strong><span>On orders over ₹999</span></div>
-      </div>
+      <div class="benefit"><span class="benefit-icon">▱</span><div><strong>Free Shipping</strong><small>On orders over ₹999</small></div></div>
+      <div class="benefit"><span class="benefit-icon">◇</span><div><strong>Secure Payments</strong><small>100% safe &amp; encrypted</small></div></div>
+      <div class="benefit"><span class="benefit-icon">▤</span><div><strong>Curated Selection</strong><small>Top travel &amp; educational books</small></div></div>
+      <div class="benefit"><span class="benefit-icon">⌁</span><div><strong>Easy Returns</strong><small>Hassle-free within 7 days</small></div></div>
+      <div class="benefit"><span class="benefit-icon">♧</span><div><strong>Special Offers</strong><small>Save more on books</small></div></div>
+    </section>
 
-      <div class="benefit">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="m16 3 11 4v7c0 7.2-4.5 11.9-11 15-6.5-3.1-11-7.8-11-15V7l11-4Z"></path>
-          <path d="m11 15 3.2 3.2L21 11"></path>
-        </svg>
-        <div><strong>Secure Payments</strong><span>100% safe &amp; encrypted</span></div>
+    <section class="section category-nav-section">
+      <div class="section-head"><h2 class="section-title small-title">Shop by Category</h2><a class="view-all" href="#categories">View All <span>→</span></a></div>
+      <div class="category-grid" id="categories">
+        <a class="category-tile" href="#guides"><div class="category-photo photo-travel"></div><strong>Travel Guides</strong></a>
+        <a class="category-tile" href="#bestsellers"><div class="category-photo photo-nonfiction"></div><strong>Non-Fiction</strong></a>
+        <a class="category-tile" href="#bestsellers"><div class="category-photo photo-fiction"></div><strong>Fiction</strong></a>
+        <a class="category-tile" href="#bestsellers"><div class="category-photo photo-best"></div><strong>Best Sellers</strong></a>
+        <a class="category-tile" href="#new-arrivals"><div class="category-photo photo-new"></div><strong>New Arrivals</strong></a>
+        <a class="category-tile" href="#guides"><div class="category-photo photo-maps"></div><strong>Maps &amp; Atlases</strong></a>
+        <a class="category-tile" href="#offers"><div class="category-photo photo-gifts"></div><strong>Gift Cards</strong></a>
+        <a class="category-tile" href="#guides"><div class="category-photo photo-accessories"></div><strong>Travel Accessories</strong></a>
       </div>
+    </section>
 
-      <div class="benefit">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M4 6h10c4 0 6 2 6 6v14c0-3-2-5-6-5H4V6Zm24 0H18c-4 0-6 2-6 6v14c0-3 2-5 6-5h10V6Z"></path>
-        </svg>
-        <div><strong>Curated Selection</strong><span>Top travel &amp; educational books</span></div>
-      </div>
-
-      <div class="benefit">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M25 5C15 6 8 11 8 19c0 4 3 6 6 6 7 0 10-9 11-20Z"></path>
-          <path d="M4 28C8 20 13 15 21 11"></path>
-        </svg>
-        <div><strong>Eco-Friendly</strong><span>Sustainable packaging</span></div>
-      </div>
+    <section class="promo-grid section-wide" id="offers">
+      <a class="promo promo-books" href="#guides"><div><span>Books Make<br>Better Travelers</span><small>Get up to <b>40% OFF</b><br>on selected travel guides</small><em>Shop Now →</em></div></a>
+      <a class="promo promo-new" href="#new-arrivals"><div><span>New Arrivals</span><small>Fresh stories. New places.</small><em>Explore Now →</em></div></a>
+      <a class="promo promo-offer" href="#guides"><div><span>Special Offers</span><small><b>Buy 2 Get 1 Free</b><br>On Travel Guides</small><em>Shop Now →</em></div></a>
     </section>
 
     <section class="section" id="guides">
-      <div class="section-head">
-        <h2 class="section-title">Featured Travel Guides</h2>
-        <a class="view-all" href="#guides">View All <span aria-hidden="true">→</span></a>
-      </div>
-
+      <div class="section-head"><h2 class="section-title">Featured Travel Guides</h2><a class="view-all" href="#guides">View All <span>→</span></a></div>
       <div class="products">
-        <article class="product">
-          <div class="cover">
-            <img class="book-image" src="images/books/italy.jpg" alt="Italy Travel Guide cover">
-          </div>
-          <h3>Italy Travel Guide</h3>
-          <div class="author">Lonely Planet</div>
-          <div class="rating"><span class="stars">★★★★★</span> 4.8 (1.2k)</div>
-          <div class="price">₹799</div>
-          <button class="add" type="button" onclick="addToCart(this)">Add to Cart</button>
-        </article>
-
-        <article class="product">
-          <div class="cover">
-            <img class="book-image" src="images/books/japan.jpg" alt="Japan Travel Guide cover">
-          </div>
-          <h3>Japan Travel Guide</h3>
-          <div class="author">Lonely Planet</div>
-          <div class="rating"><span class="stars">★★★★★</span> 4.7 (980)</div>
-          <div class="price">₹749</div>
-          <button class="add" type="button" onclick="addToCart(this)">Add to Cart</button>
-        </article>
-
-        <article class="product">
-          <div class="cover">
-            <img class="book-image" src="images/books/new-zealand.jpg" alt="New Zealand Travel Guide cover">
-          </div>
-          <h3>New Zealand Travel Guide</h3>
-          <div class="author">Lonely Planet</div>
-          <div class="rating"><span class="stars">★★★★★</span> 4.8 (760)</div>
-          <div class="price">₹799</div>
-          <button class="add" type="button" onclick="addToCart(this)">Add to Cart</button>
-        </article>
-
-        <article class="product">
-          <div class="cover">
-            <img class="book-image" src="images/books/switzerland.jpg" alt="Switzerland Travel Guide cover">
-          </div>
-          <h3>Switzerland Travel Guide</h3>
-          <div class="author">Lonely Planet</div>
-          <div class="rating"><span class="stars">★★★★★</span> 4.6 (642)</div>
-          <div class="price">₹749</div>
-          <button class="add" type="button" onclick="addToCart(this)">Add to Cart</button>
-        </article>
-
-        <article class="product">
-          <div class="cover">
-            <img class="book-image" src="images/books/bali.jpg" alt="Bali Travel Guide cover">
-          </div>
-          <h3>Bali Travel Guide</h3>
-          <div class="author">Lonely Planet</div>
-          <div class="rating"><span class="stars">★★★★★</span> 4.7 (538)</div>
-          <div class="price">₹699</div>
-          <button class="add" type="button" onclick="addToCart(this)">Add to Cart</button>
-        </article>
-
-        <article class="product">
-          <div class="cover">
-            <img class="book-image" src="images/books/iceland.jpg" alt="Iceland Travel Guide cover">
-          </div>
-          <h3>Iceland Travel Guide</h3>
-          <div class="author">Lonely Planet</div>
-          <div class="rating"><span class="stars">★★★★★</span> 4.6 (421)</div>
-          <div class="price">₹749</div>
-          <button class="add" type="button" onclick="addToCart(this)">Add to Cart</button>
-        </article>
+        <article class="product" data-search="italy travel guide lonely planet"><div class="product-image-wrap"><span class="badge">Best Seller</span><button class="wishlist" type="button" aria-label="Add Italy Travel Guide to wishlist">♡</button><img class="book-image" src="images/books/italy.jpg" alt="Italy Travel Guide cover"></div><h3>Italy Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.8 (1.2k)</div><div class="price">₹799 <del>₹999</del><small>20% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="japan travel guide lonely planet"><div class="product-image-wrap"><button class="wishlist" type="button" aria-label="Add Japan Travel Guide to wishlist">♡</button><img class="book-image" src="images/books/japan.jpg" alt="Japan Travel Guide cover"></div><h3>Japan Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.7 (980)</div><div class="price">₹749 <del>₹999</del><small>25% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="new zealand travel guide lonely planet"><div class="product-image-wrap"><span class="badge new">New Arrival</span><button class="wishlist" type="button" aria-label="Add New Zealand Travel Guide to wishlist">♡</button><img class="book-image" src="images/books/new-zealand.jpg" alt="New Zealand Travel Guide cover"></div><h3>New Zealand Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.8 (760)</div><div class="price">₹799 <del>₹1,099</del><small>27% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="switzerland travel guide lonely planet"><div class="product-image-wrap"><button class="wishlist" type="button" aria-label="Add Switzerland Travel Guide to wishlist">♡</button><img class="book-image" src="images/books/switzerland.jpg" alt="Switzerland Travel Guide cover"></div><h3>Switzerland Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.6 (642)</div><div class="price">₹749 <del>₹999</del><small>25% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="bali travel guide lonely planet"><div class="product-image-wrap"><button class="wishlist" type="button" aria-label="Add Bali Travel Guide to wishlist">♡</button><img class="book-image" src="images/books/bali.jpg" alt="Bali Travel Guide cover"></div><h3>Bali Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.7 (538)</div><div class="price">₹699 <del>₹899</del><small>22% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="iceland travel guide lonely planet"><div class="product-image-wrap"><button class="wishlist" type="button" aria-label="Add Iceland Travel Guide to wishlist">♡</button><img class="book-image" src="images/books/iceland.jpg" alt="Iceland Travel Guide cover"></div><h3>Iceland Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.6 (421)</div><div class="price">₹749 <del>₹999</del><small>25% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
       </div>
     </section>
 
-    <section class="category-section" id="nonfiction">
-      <div class="section-head">
-        <h2 class="section-title">Popular Categories</h2>
-        <a class="view-all" href="#nonfiction">View All <span aria-hidden="true">→</span></a>
-      </div>
-
-      <div class="categories">
-        <a class="category" href="#guides">
-          <div class="category-image cat-one"></div>
-          <div class="category-content">
-            <strong>Travel Guides</strong>
-            <span>Explore the world</span>
-          </div>
-          <div class="cat-arrow" aria-hidden="true">→</div>
-        </a>
-
-        <a class="category" href="#nonfiction">
-          <div class="category-image cat-two"></div>
-          <div class="category-content">
-            <strong>Non-Fiction</strong>
-            <span>Real stories. Bigger ideas.</span>
-          </div>
-          <div class="cat-arrow" aria-hidden="true">→</div>
-        </a>
-
-        <a class="category" href="#bestsellers">
-          <div class="category-image cat-three"></div>
-          <div class="category-content">
-            <strong>Best Sellers</strong>
-            <span>Loved by readers</span>
-          </div>
-          <div class="cat-arrow" aria-hidden="true">→</div>
-        </a>
+    <section class="section" id="bestsellers">
+      <div class="section-head"><h2 class="section-title">Best Sellers</h2><a class="view-all" href="#bestsellers">View All <span>→</span></a></div>
+      <div class="products">
+        <article class="product" data-search="psychology money nonfiction"><div class="product-image-wrap"><button class="wishlist" type="button" aria-label="Add The Psychology of Money to wishlist">♡</button><img class="book-image" src="images/books/psychology-of-money.jpg" alt="The Psychology of Money cover"></div><h3>The Psychology of Money</h3><div class="author">Morgan Housel</div><div class="rating"><span>★★★★★</span> 4.8 (1.4k)</div><div class="price">₹399 <del>₹499</del><small>20% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="atomic habits self help"><div class="product-image-wrap"><button class="wishlist" type="button" aria-label="Add Atomic Habits to wishlist">♡</button><img class="book-image" src="images/books/atomic-habits.jpg" alt="Atomic Habits cover"></div><h3>Atomic Habits</h3><div class="author">James Clear</div><div class="rating"><span>★★★★★</span> 4.7 (1.5k)</div><div class="price">₹449 <del>₹699</del><small>36% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="ikigai japanese philosophy"><div class="product-image-wrap"><button class="wishlist" type="button" aria-label="Add Ikigai to wishlist">♡</button><img class="book-image" src="images/books/ikigai.jpg" alt="Ikigai cover"></div><h3>Ikigai</h3><div class="author">Hector Garcia</div><div class="rating"><span>★★★★★</span> 4.6 (2.1k)</div><div class="price">₹399 <del>₹599</del><small>33% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="dopamine detox self help"><div class="product-image-wrap"><button class="wishlist" type="button" aria-label="Add Dopamine Detox to wishlist">♡</button><img class="book-image" src="images/books/dopamine-detox.jpg" alt="Dopamine Detox cover"></div><h3>Dopamine Detox</h3><div class="author">Thibaut Meurisse</div><div class="rating"><span>★★★★★</span> 4.5 (1.8k)</div><div class="price">₹349 <del>₹499</del><small>30% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="sam club five club"><div class="product-image-wrap"><button class="wishlist" type="button" aria-label="Add The 5 AM Club to wishlist">♡</button><img class="book-image" src="images/books/5am-club.jpg" alt="The 5 AM Club cover"></div><h3>The 5 AM Club</h3><div class="author">Robin Sharma</div><div class="rating"><span>★★★★★</span> 4.6 (913)</div><div class="price">₹399 <del>₹599</del><small>33% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="deep work productivity"><div class="product-image-wrap"><button class="wishlist" type="button" aria-label="Add Deep Work to wishlist">♡</button><img class="book-image" src="images/books/deep-work.jpg" alt="Deep Work cover"></div><h3>Deep Work</h3><div class="author">Cal Newport</div><div class="rating"><span>★★★★★</span> 4.7 (2.2k)</div><div class="price">₹449 <del>₹699</del><small>36% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
       </div>
     </section>
 
-    <section id="bestsellers" hidden aria-hidden="true"></section>
+    <section class="section" id="new-arrivals">
+      <div class="section-head"><h2 class="section-title">New Arrivals</h2><a class="view-all" href="#new-arrivals">View All <span>→</span></a></div>
+      <div class="products">
+        <article class="product" data-search="south korea travel guide"><div class="product-image-wrap"><img class="book-image" src="images/books/south-korea.jpg" alt="South Korea Travel Guide cover"></div><h3>South Korea Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.5 (321)</div><div class="price">₹749 <del>₹999</del><small>25% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="canada travel guide"><div class="product-image-wrap"><img class="book-image" src="images/books/canada.jpg" alt="Canada Travel Guide cover"></div><h3>Canada Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.6 (412)</div><div class="price">₹799 <del>₹1,099</del><small>27% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="australia travel guide"><div class="product-image-wrap"><img class="book-image" src="images/books/australia.jpg" alt="Australia Travel Guide cover"></div><h3>Australia Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.7 (508)</div><div class="price">₹799 <del>₹1,099</del><small>27% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="norway travel guide"><div class="product-image-wrap"><img class="book-image" src="images/books/norway.jpg" alt="Norway Travel Guide cover"></div><h3>Norway Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.5 (278)</div><div class="price">₹749 <del>₹999</del><small>25% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="spain travel guide"><div class="product-image-wrap"><img class="book-image" src="images/books/spain.jpg" alt="Spain Travel Guide cover"></div><h3>Spain Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.6 (394)</div><div class="price">₹749 <del>₹999</del><small>25% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+        <article class="product" data-search="thailand travel guide"><div class="product-image-wrap"><img class="book-image" src="images/books/thailand.jpg" alt="Thailand Travel Guide cover"></div><h3>Thailand Travel Guide</h3><div class="author">Lonely Planet</div><div class="rating"><span>★★★★★</span> 4.7 (618)</div><div class="price">₹699 <del>₹999</del><small>30% off</small></div><button class="add" type="button" onclick="addToCart(this)">🛒 Add to Cart</button></article>
+      </div>
+    </section>
+
+    <section class="wide-banner"><div><h2>Travel More. Spend Less.</h2><p>Up to <b>50% OFF</b> on selected books</p><a class="primary-btn" href="#guides">Shop Deals <span>→</span></a></div></section>
+
+    <section class="section recently"><div class="section-head"><h2 class="section-title">Recently Viewed</h2></div><div class="recent-grid">
+      <a class="recent-item" href="#guides"><img src="images/books/italy.jpg" alt="Italy Travel Guide"><div><strong>Italy Travel Guide</strong><span>₹799</span><small>Add to Cart</small></div></a>
+      <a class="recent-item" href="#bestsellers"><img src="images/books/psychology-of-money.jpg" alt="The Psychology of Money"><div><strong>The Psychology of Money</strong><span>₹399</span><small>Add to Cart</small></div></a>
+      <a class="recent-item" href="#bestsellers"><img src="images/books/atomic-habits.jpg" alt="Atomic Habits"><div><strong>Atomic Habits</strong><span>₹449</span><small>Add to Cart</small></div></a>
+      <a class="recent-item" href="#guides"><img src="images/books/japan.jpg" alt="Japan Travel Guide"><div><strong>Japan Travel Guide</strong><span>₹749</span><small>Add to Cart</small></div></a>
+      <a class="recent-item" href="#bestsellers"><img src="images/books/ikigai.jpg" alt="Ikigai"><div><strong>Ikigai</strong><span>₹399</span><small>Add to Cart</small></div></a>
+    </div></section>
+
+    <section class="newsletter"><div class="newsletter-icon">✉</div><div><strong>Join Our Newsletter</strong><span>Get travel stories, new releases and exclusive offers straight to your inbox.</span></div><form id="newsletterForm"><input type="email" placeholder="Enter your email address" aria-label="Email address" required><button type="submit">Subscribe →</button></form><div class="newsletter-perks"><span>🎁 <b>Exclusive Offers</b><small>Special deals for subscribers</small></span><span>▤ <b>New Releases</b><small>Be the first to know</small></span><span>♡ <b>A Community</b><small>For curious minds</small></span></div></section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand"><a class="brand" href="#top"><div class="brand-mark"><div class="book-page"></div><div class="book-page right"></div></div><div class="brand-text"><strong>WanderReads</strong><span>Books for a Bigger World</span></div></a><p>Discover the world through books. Travel guides and stories for your next adventure.</p><div class="socials"><a href="#">f</a><a href="#">◎</a><a href="#">▶</a><a href="#">p</a></div></div>
+      <div><h3>Shop</h3><a href="#guides">Travel Guides</a><a href="#bestsellers">Non-Fiction</a><a href="#bestsellers">Fiction</a><a href="#bestsellers">Best Sellers</a><a href="#new-arrivals">New Arrivals</a><a href="#offers">Gift Cards</a></div>
+      <div><h3>Help</h3><a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns &amp; Refunds</a><a href="#">Track Order</a><a href="#">Contact Us</a></div>
+      <div><h3>About</h3><a href="#">Our Story</a><a href="#">Blog</a><a href="#">Sustainability</a><a href="#">Careers</a></div>
+      <div class="app-column"><h3>Download Our App</h3><div class="app-buttons"><a href="#"> App Store</a><a href="#">▶ Google Play</a></div><div class="payments"><span>VISA</span><span>●●</span><span>UPI</span><span>PayPal</span></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 WanderReads. All rights reserved.</span><span>More Books. More Journeys. ↑</span></div>
+  </footer>
 
   <script>
     let cartCount = 0;
+    const cartBadge = document.querySelector('.cart-count');
 
     function addToCart(button) {
       cartCount += 1;
-      document.querySelector('.cart-count').textContent = cartCount;
-      button.textContent = 'Added ✓';
-
+      cartBadge.textContent = cartCount;
+      const originalText = button.textContent;
+      button.textContent = '✓ Added to Cart';
+      button.classList.add('added');
       setTimeout(() => {
-        button.textContent = 'Add to Cart';
-      }, 900);
+        button.textContent = originalText;
+        button.classList.remove('added');
+      }, 1000);
     }
+
+    document.querySelectorAll('.wishlist').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        button.textContent = button.classList.contains('active') ? '♥' : '♡';
+      });
+    });
+
+    document.querySelector('#searchInput').addEventListener('input', event => {
+      const query = event.target.value.trim().toLowerCase();
+      document.querySelectorAll('.product').forEach(card => {
+        card.hidden = query && !card.dataset.search.includes(query);
+      });
+    });
+
+    document.querySelector('#newsletterForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const button = event.currentTarget.querySelector('button');
+      button.textContent = 'Subscribed ✓';
+      event.currentTarget.reset();
+    });
   </script>
 </body>
 </html>
